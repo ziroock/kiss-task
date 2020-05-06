@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # This will route requests that are not for pre-existing paths defined in
     # the API back to the index path
     # Allows me to use Switch and Route inside App.js
-    get '*path', to: 'pages#index', via: :all
+    #get '*path', to: 'pages#index', via: :all
     #get '*path' => redirect('/')
 
 end

@@ -15,7 +15,6 @@ const App = () => {
             .catch( resp => console.log(resp) );
 
     }, [people.length]); //only re-run effect if count changes
-
     //get all attributes data
     let peopleObject = [];
     try {

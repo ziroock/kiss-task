@@ -1,35 +1,42 @@
 import React from 'react'
 
+//TODO: Figure Out Sorting!
+//TODO: Make the table a little prettier!
+
+
 const Table = (props) => {
     try {
+        const table_keys = Object.keys(props.data[0]);
+        const table_data = props.data;
         let getHeader = function () {
-            console.log(props);
-            let keys = Object.keys(props.data[0]);
-            let tHeader = keys.map((key) => {
-                return <th key={key}>{key.toUpperCase()}</th>
+            let table_header = table_keys.map( (col_name) => {
+                return <th key={col_name}>{col_name.toUpperCase()}</th>;
             })
-            return tHeader;
-        }
-
-        let getRowData = function () {
-
+            return table_header;
         }
 
         let getRowsData = function () {
-
+            let tester = table_data.map((row, index) => {
+                //console.log(key);
+                return <tr key={index}>{
+                    table_keys.map( (col) => {
+                        //console.log(row[key]);
+                        return <td key={row[col]}>{row[col]}</td>;
+                    })
+                }</tr>;
+            })
+            return tester;
         }
-
-// <tbody>
-//     {this.getRowsData()}
-// </tbody>
 
         return (
             <div>
                 <table>
                     <thead>
-                    <tr>{getHeader()}</tr>
+                        <tr>{getHeader()}</tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        {getRowsData()}
+                    </tbody>
                 </table>
             </div>
         );
@@ -43,49 +50,12 @@ const Table = (props) => {
 
 export default Table
 
-
-// import React, {Component} from 'react'
-//
-// class Table extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.getHeader = this.getHeader.bind(this);
-//         this.getRowsData = this.getRowsData.bind(this);
-//         this.getRowData = this.getRowData.bind(this);
-//     }
-//
-//     getHeader = function(){
-//         let keys = Object.keys(this.props.data[0]);
-//         let tHeader = keys.map((key) => {
-//             return <th key={key}>{key}</th>
+// let tester = table_data.map((row, index) => {
+//     //console.log(key);
+//     return <tr key={index}>{
+//         table_keys.map((key) => {
+//             console.log(row[key]);
+//             return <td key={row[key]}>{row[key]}</td>;
 //         })
-//         return tHeader;
-//     }
-//
-//     getRowData = function(){
-//
-//     }
-//
-//     getRowsData = function(){
-//
-//     }
-//
-// // <tbody>
-// //     {this.getRowsData()}
-// // </tbody>
-//
-//     render() {
-//         return (
-//             <div>
-//                 <table>
-//                     <thead>
-//                     <tr>{this.getHeader()}</tr>
-//                     </thead>
-//                     <tbody></tbody>
-//                 </table>
-//             </div>
-//         );
-//     }
-// }
-//
-// export default Table
+//     }</tr>;
+// })
