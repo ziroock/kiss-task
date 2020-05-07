@@ -29,12 +29,9 @@ const App = () => {
 
     let people_text = JSON.stringify(peopleObject, null, 4);
 
-
     return (
         <Fragment>
-            <div> This is the People#index view of the app.</div>
-            <div> {people_text} </div>
-            <h3> Table </h3>
+            <h2> **********People Info Table********** </h2>
             <div>
                 <Table data={peopleObject}/>
             </div>

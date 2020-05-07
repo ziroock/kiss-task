@@ -1,31 +1,52 @@
 import React from 'react'
 
-//TODO: Figure Out Sorting!
+//TODO: Add more functionality ???
 //TODO: Make the table a little prettier!
-
+//TODO: Run the project on laptop to document steps to run
+//TODO: Document in the README file
 
 const Table = (props) => {
     try {
         const table_keys = Object.keys(props.data[0]);
         const table_data = props.data;
+
+        //onClicck():  https://reactjs.org/docs/handling-events.html
+        //useState: https://reactjs.org/docs/hooks-reference.html
+        const [state, setState] = React.useState(null);
+
+        if(state !== null) {
+            table_data.sort( (a, b) => {
+                if(a[state] < b[state]) {
+                    return -1;
+                }
+                else if (a[state] > b[state]) {
+                    return 1;
+                }
+                return 0;
+            });
+        }
+
         let getHeader = function () {
-            let table_header = table_keys.map( (col_name) => {
-                return <th key={col_name}>{col_name.toUpperCase()}</th>;
+            let table_header = table_keys.map( (key) => {
+                return (<th key={key}>
+                    <button onClick={() => setState(key)}> </button>
+                    {key.toUpperCase()}
+                </th>);
             })
             return table_header;
         }
 
         let getRowsData = function () {
-            let tester = table_data.map((row, index) => {
-                //console.log(key);
+            //for each row
+            let rows_data = table_data.map((row, index) => {
                 return <tr key={index}>{
-                    table_keys.map( (col) => {
-                        //console.log(row[key]);
-                        return <td key={row[col]}>{row[col]}</td>;
+                    //for each key
+                    table_keys.map( (key) => {
+                        return <td key={row[key]}>{row[key]}</td>;
                     })
                 }</tr>;
             })
-            return tester;
+            return rows_data;
         }
 
         return (
@@ -49,13 +70,3 @@ const Table = (props) => {
 }
 
 export default Table
-
-// let tester = table_data.map((row, index) => {
-//     //console.log(key);
-//     return <tr key={index}>{
-//         table_keys.map((key) => {
-//             console.log(row[key]);
-//             return <td key={row[key]}>{row[key]}</td>;
-//         })
-//     }</tr>;
-// })
