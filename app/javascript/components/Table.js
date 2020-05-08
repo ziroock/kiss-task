@@ -1,9 +1,7 @@
 import React from 'react'
 
-//TODO: Add more functionality ???
+//TODO: Add more functionality ??? (if time)
 //TODO: Make the table a little prettier!
-//TODO: Run the project on laptop to document steps to run
-//TODO: Document in the README file
 
 const Table = (props) => {
     try {

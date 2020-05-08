@@ -22,7 +22,6 @@ const App = () => {
             let personObject = people[i].attributes;
             peopleObject.push(personObject);
         }
-        //console.log(JSON.stringify(peopleObject, null, 4));
     }catch(err){
         console.log(err.message)
     }

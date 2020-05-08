@@ -1,6 +1,7 @@
 module Api
     module V1
         class PeopleController < ApplicationController
+            #TODO: Implement create, read, update and delete, to allow changes on the data
             def index
                 people = Person.all
 

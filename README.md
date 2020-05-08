@@ -1,24 +1,23 @@
-# README
+# Kissmatrics Take Home Task
+## How to run project:
+### For the first time
+1. Clone the project folder from  the following repository: https://github.com/ziroock/kiss-task.git
+2. Run **bundle install** to Install the dependencies specified in the Gemfile
+3. Run  **yarn install --check-files** to check and install missing dependencies
+4. Create database **rails db:create**
+5. Merge database **rails db:merge**
+6. Populate database **rails db:seed**
+7. Start the server **rails s**
+8. In your browser type down: http://localhost:3000/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Once everything is set up:
+1. Start the server **rails s**
+2. In your browser type down: http://localhost:3000/
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Resources used:
+- https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend
+- https://www.w3schools.com/TAgs/tag_table.asp
+- https://www.youtube.com/watch?v=oyjzi837wME
+- https://www.youtube.com/watch?v=F0xErjOtJAQ
+- https://dev.to/jean182/rails-api-with-a-frontend-built-in-react-part-i-con
