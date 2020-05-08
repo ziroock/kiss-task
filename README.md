@@ -5,8 +5,8 @@
 2. Run **bundle install** to Install the dependencies specified in the Gemfile
 3. Run  **yarn install --check-files** to check and install missing dependencies
 4. Create database **rails db:create**
-5. Merge database **rails db:merge**
-6. Populate database **rails db:seed**
+5. Update database version **rails db:migrate**
+6. Load database **rails db:seed**
 7. Start the server **rails s**
 8. In your browser type down: http://localhost:3000/
 

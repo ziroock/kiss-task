@@ -22,7 +22,7 @@ const App = () => {
             let personObject = people[i].attributes;
             peopleObject.push(personObject);
         }
-    }catch(err){
+    } catch(err) {
         console.log(err.message)
     }
 

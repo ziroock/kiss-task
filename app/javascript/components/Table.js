@@ -1,7 +1,8 @@
 import React from 'react'
 
 //TODO: Add more functionality ??? (if time)
-//TODO: Make the table a little prettier!
+//TODO: Make the table a little prettier! ADD SOME CSS
+//TODO: Ask about what the proper way o sort street adrreses is: by street name? by street number? by PO#?
 
 const Table = (props) => {
     try {
@@ -59,9 +60,10 @@ const Table = (props) => {
                 </table>
             </div>
         );
-    }catch(err){
+
+    } catch(err) {
         return (
-          <div></div>
+          <div>{err.message}</div>
         );
         console.log(err.message)
     }
