@@ -26,14 +26,8 @@ const App = () => {
         console.log(err.message)
     }
 
-    let people_text = JSON.stringify(peopleObject, null, 4);
-
     return (
-        <Fragment>
-            <div>
-                <Table data={peopleObject}/>
-            </div>
-        </Fragment>
+        <Table data={peopleObject}/>
     )
 }
 

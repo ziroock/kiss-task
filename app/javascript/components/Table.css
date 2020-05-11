@@ -27,8 +27,14 @@ tbody tr:hover {
     background-color: paleturquoise;
 }
 table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
     background-color: darkturquoise;
     color: white;
+}
+
+.button {
+    padding-left: 1em;
+    background-color: darkturquoise;
+    cursor: grab;
 }

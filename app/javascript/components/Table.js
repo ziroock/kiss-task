@@ -1,18 +1,15 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import './Table.css'
 
-//TODO: Add more functionality ??? (if time)
-//TODO: Make the table a little prettier! ADD SOME CSS
-//TODO: Ask about what the proper way to sort street adrreses is: by street name? by street number? by PO#?
+//TODO: Add more functionality (descending sort) ??? (if time)
 
 const Table = (props) => {
     try {
         const table_keys = Object.keys(props.data[0]);
         const table_data = props.data;
 
-        //onClicck():  https://reactjs.org/docs/handling-events.html
-        //useState: https://reactjs.org/docs/hooks-reference.html
-        const [state, setState] = React.useState(null);
+        let state_config = null;
+        const [state, setState] = React.useState(state_config);
 
         if(state !== null) {
             table_data.sort( (a, b) => {
@@ -22,17 +19,17 @@ const Table = (props) => {
                 else if (a[state] > b[state]) {
                     return 1;
                 }
-                return 0;
             });
         }
 
         let getHeader = function () {
             let table_header = table_keys.map( (key) => {
                 return (<th key={key}>
-                    <button onClick={() => setState(key)}>
+                    <div onClick={() => setState(key)} className="button">
                         {key.toUpperCase()}
-                    </button>
-                </th>);
+                    </div>
+                </th>
+                );
             })
             return table_header;
         }

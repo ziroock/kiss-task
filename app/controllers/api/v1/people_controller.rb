@@ -1,7 +1,7 @@
 module Api
     module V1
         class PeopleController < ApplicationController
-            #TODO: Implement create, read, update and delete, to allow changes on the data
+            protect_from_forgery with: :null_session
             def index
                 people = Person.all
 
@@ -9,8 +9,44 @@ module Api
             end
 
             def show
-                person = Person.find_by(id: params[:id])
+                person = Person.find_by(birthday: params[:birthday])
                 render json: PersonSerializer.new(person).serialized_json
+            end
+
+            def create
+                person = Person.new(person_info)
+
+                if person.save
+                    render json: PersonSerializer.new(person).serialized_json
+                else
+                    render json: {error: person.errors.messages}, status: 422
+                end
+            end
+
+            def update
+                person = Person.find_by(birthday: params[:birthday])
+
+                if person.update(person_info)
+                    render json: PersonSerializer.new(person).serialized_json
+                else
+                    render json: {error: person.errors.messages}, status: 422
+                end
+            end
+
+           def destroy
+                person = Person.find_by(birthday: params[:birthday])
+
+                if person.destroy
+                    head :no_content
+                else
+                    render json: {error: person.errors.messages}, status: 422
+                end
+           end
+
+            private
+
+            def person_info
+                params.require(:person).permit(:name, :address, :city, :region, :country, :birthday)
             end
         end
     end
