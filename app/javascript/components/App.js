@@ -30,7 +30,6 @@ const App = () => {
 
     return (
         <Fragment>
-            <h2> **********People Info Table********** </h2>
             <div>
                 <Table data={peopleObject}/>
             </div>

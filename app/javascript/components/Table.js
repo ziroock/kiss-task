@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import './Table.css'
 
 //TODO: Add more functionality ??? (if time)
 //TODO: Make the table a little prettier! ADD SOME CSS
 //TODO: Ask about what the proper way to sort street adrreses is: by street name? by street number? by PO#?
-
 
 const Table = (props) => {
     try {
@@ -29,8 +29,9 @@ const Table = (props) => {
         let getHeader = function () {
             let table_header = table_keys.map( (key) => {
                 return (<th key={key}>
-                    <button onClick={() => setState(key)}> </button>
-                    {key.toUpperCase()}
+                    <button onClick={() => setState(key)}>
+                        {key.toUpperCase()}
+                    </button>
                 </th>);
             })
             return table_header;
@@ -50,8 +51,8 @@ const Table = (props) => {
         }
 
         return (
-            <div>
                 <table>
+                    <caption> People Information Table</caption>
                     <thead>
                         <tr>{getHeader()}</tr>
                     </thead>
@@ -59,7 +60,6 @@ const Table = (props) => {
                         {getRowsData()}
                     </tbody>
                 </table>
-            </div>
         );
 
     } catch(err) {
