@@ -43,8 +43,10 @@ based on street number
 - I decided to use **postgresql** over **mysql** because when I did my initial research I found out that it has better 
 support in Rails. Also, I am new to both Ruby and React, so I decided to use the database that is more popular, so there
 is more information out there on possible problems I run into.
-- At first, I implemented only the bare minimum inside people_controller (only index and show). Then I decided to 
-add the rest of the CRUD functions, so it would be easier to make future changes.
+- I first set up the server, then I connected react and focused on getting the dynamic table. Once I was done with it
+I focused on sorting.
+- At first, I implemented only the bare minimum inside people_controller (only index and show). Then once I was done with 
+the main functionality I decided to add the rest of the CRUD functions, so it would be easier to make future changes.
 - I tested the CRUD functions inside people_controller using Postman.
 - Initially I was worried, that duplicate birthdays might be a problem, so I had the routs for show, update and delete
 to find_by(id). However, when I was testing the CRUD functions I decided it would be easier to use birthday as the
