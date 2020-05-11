@@ -3,7 +3,7 @@ import React from 'react'
 //TODO: Add more functionality ??? (if time)
 //TODO: Make the table a little prettier! ADD SOME CSS
 //TODO: Ask about what the proper way to sort street adrreses is: by street name? by street number? by PO#?
-//TODO: Remove unused files (used to practice)
+
 
 const Table = (props) => {
     try {
