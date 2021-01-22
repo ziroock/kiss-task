@@ -60,14 +60,10 @@ makes it reusable.
 - Overall this is the first time I am working with Ruby on Rails and I am still new to React, that is why I cannot 
 comment about a lot of tradeoffs. 
 
-## Obstacle and Time Spent
-- I spent about 2h researching practicing with ruby and react.
+## Obstacle
 - I ran into a huge problem with yarn after I updated my WSL to Ubuntu 20.04. It did not let me install it from the
  official repository. I tried to install it using different ways, but it did not work with the server set up. I could not find
   the problem and spent about 4h until I decided to revert to Ubuntu 18.04.
-- Planning, coding and documenting I spent 15h.
-- Testing and running on a separate machine in order to document I spent 2h.
-- Total time spent: 23h.
 
 
 ## Resources used
