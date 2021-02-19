@@ -1,15 +1,21 @@
 # Kissmatrics Take Home Task
 ## How to run the project
 ### For the first time
-1. Clone the project folder from  the following repository: https://github.com/ziroock/kiss-task.git
+1. Clone the project folder from  the following repository
+   ```bash 
+    https://github.com/ziroock/kiss-task.git
+   ```
 2. Make sure Node, NPM, Yarn and Posgresql are installed
-3. Run **bundle install** to Install the dependencies specified in the Gemfile
-4. Run  **yarn install --check-files** to check and install missing dependencies
-5. If the database is not running start it by using **sudo service postgresql start**
-6. Create database **rails db:create**
-7. Update database version **rails db:migrate**
-8. Load database **rails db:seed**
-9. Start the server **rails s**
+3. Run ```bundle install``` to Install the dependencies specified in the Gemfile
+4. Run ```yarn install --check-files``` to check and install missing dependencies
+5. If the database is not running start it by using 
+   ```bash
+    sudo service postgresql start
+   ```
+6. Create database ```rails db:create```
+7. Update database version ```rails db:migrate```
+8. Load database ```rails db:seed```
+9. Start the server ```rails s```
 10. In your browser type down: http://localhost:3000/
 11. To sort columns click on the header text
 12. To stop the server use **CTRL^C**
@@ -26,6 +32,7 @@
 - NPM v6.14.4
 - Yarn 1.22.4
 - Postgresql v10
+- Ruby 2.7.1
 
 ## Future Changes
 - I would like to add the option of descending sort, so on each click it alternates between ascending and descending 
